@@ -172,7 +172,7 @@ print(model.summary())
 # compile model
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 # fit model
-model.fit(X, y, batch_size=128, epochs=100)
+model.fit(X, y, batch_size=128, epochs=50)
 
 
 # In[4]:
