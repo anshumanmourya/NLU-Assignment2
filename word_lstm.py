@@ -79,10 +79,10 @@ def save_doc(lines, filename):
 	file.close()
 
 # load document
-#in_filename = 'republic_clean.txt'
-doc = gutenberg.raw('austen-emma.txt')
+file = gutenberg.fileids()
+doc = gutenberg.raw(file)
 #doc = load_doc(in_filename)
-print(doc[:200])
+#print(doc[:200])
 
 # clean document
 tokens = clean_doc(doc)
@@ -172,7 +172,7 @@ print(model.summary())
 # compile model
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 # fit model
-model.fit(X, y, batch_size=128, epochs=5)
+model.fit(X, y, batch_size=128, epochs=30)
 
 
 # In[4]:
