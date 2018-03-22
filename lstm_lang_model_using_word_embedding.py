@@ -17,6 +17,17 @@ import string
 punc = list(string.punctuation)
 
 
+# In[2]:
+
+
+gut_line = gutenberg.sents()
+
+lines = list()
+for line in gut_line :
+    x = [w.lower() for w in line if w not in punc]
+    lines.append(x)
+
+
 # In[3]:
 
 
@@ -72,8 +83,12 @@ print('Unique Tokens: %d' % len(set(tokens)))
 # In[4]:
 
 
-small = tokens
+small = tokens[:100]
 #print small
+
+
+# In[5]:
+
 
 def save_doc(lines, filename):
 	data = '\n'.join(lines)
@@ -138,7 +153,7 @@ print(model.summary())
 # compile model
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 # fit model
-model.fit(X, y, batch_size=128, epochs=1)
+model.fit(X, y, batch_size=128, epochs=100)
 
 
 # In[6]:
@@ -148,4 +163,3 @@ model.fit(X, y, batch_size=128, epochs=1)
 model.save('model.h5')
 # save the tokenizer
 dump(tokenizer, open('tokenizer.pkl', 'wb'))
-
