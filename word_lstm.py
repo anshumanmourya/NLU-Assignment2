@@ -79,7 +79,9 @@ def save_doc(lines, filename):
 	file.close()
 
 # load document
-file = gutenberg.fileids()
+file = ['austen-emma.txt', 'austen-persuasion.txt', 'austen-sense.txt', 'bible-kjv.txt',
+'blake-poems.txt', 'bryant-stories.txt', 'burgess-busterbrown.txt']
+#gutenberg.fileids()
 doc = gutenberg.raw(file)
 #doc = load_doc(in_filename)
 #print(doc[:200])
