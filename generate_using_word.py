@@ -59,6 +59,6 @@ seed_text = lines[randint(0,len(lines))]
 print(seed_text + '\n')
 
 # generate new text
-generated = generate_seq(model, tokenizer, seq_length, seed_text, 1)
+generated = generate_seq(model, tokenizer, seq_length, seed_text, 50)
 print(generated)
 
