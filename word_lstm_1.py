@@ -82,7 +82,7 @@ print('Unique Tokens: %d' % len(set(tokens)))#https://github.com/anshumanmourya/
 
 small = tokens
 small.append('<UNK>')
-print small
+#print small
 
 
 # In[12]:
