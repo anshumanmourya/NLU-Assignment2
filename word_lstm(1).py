@@ -80,7 +80,7 @@ print('Unique Tokens: %d' % len(set(tokens)))#https://github.com/anshumanmourya/
 
 
 
-small = tokens[:2000]
+small = tokens
 small.append('<UNK>')
 print small
 
@@ -153,7 +153,7 @@ print(model.summary())
 # compile model
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 # fit model
-model.fit(X, y, batch_size=256, epochs=30)
+model.fit(X, y, batch_size=128, epochs=20)
 
 
 # In[4]:
